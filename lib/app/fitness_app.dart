@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:fittrack/app/app_controller.dart';
-import 'package:fittrack/features/dashboard/bloc/today_bloc.dart';
 import 'package:fittrack/features/dashboard/presentation/home_screen.dart';
-import 'package:fittrack/features/notifications/bloc/notification_bloc.dart';
-import 'package:fittrack/features/water/bloc/water_bloc.dart';
 
 class FitnessApp extends StatelessWidget {
   const FitnessApp({super.key});
@@ -37,7 +34,6 @@ class FitnessApp extends StatelessWidget {
         primary: Color(0xFF6C63FF),
         secondary: Color(0xFF3B82F6),
         surface: Color(0xFF1E1E2E),
-        background: Color(0xFF0F0F1A),
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: Color(0xFF0F0F1A),
