@@ -15,7 +15,9 @@ class WaterTrackerWidget extends StatelessWidget {
         if (state is! WaterLoaded) {
           return const SizedBox(
             height: 80,
-            child: Center(child: CircularProgressIndicator(color: Color(0xFF3B82F6))),
+            child: Center(
+              child: CircularProgressIndicator(color: Color(0xFF3B82F6)),
+            ),
           );
         }
 
@@ -62,7 +64,9 @@ class WaterTrackerWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    progressColor: isGoalMet ? Colors.green : const Color(0xFF3B82F6),
+                    progressColor: isGoalMet
+                        ? Colors.green
+                        : const Color(0xFF3B82F6),
                     backgroundColor: Colors.blue.withOpacity(0.1),
                   ),
                   const SizedBox(width: 16),

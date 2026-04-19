@@ -72,8 +72,11 @@ class RestDayCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(Icons.check_circle_outline,
-                      color: Colors.teal, size: 16),
+                  const Icon(
+                    Icons.check_circle_outline,
+                    color: Colors.teal,
+                    size: 16,
+                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(

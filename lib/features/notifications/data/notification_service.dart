@@ -20,8 +20,9 @@ class NotificationService {
   Future<void> initialize() async {
     tz.initializeTimeZones();
 
-    const androidSettings =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
+    const androidSettings = AndroidInitializationSettings(
+      '@mipmap/ic_launcher',
+    );
     const iosSettings = DarwinInitializationSettings(
       requestAlertPermission: true,
       requestBadgePermission: true,
@@ -63,9 +64,10 @@ class NotificationService {
       importance: Importance.defaultImportance,
     );
 
-    final androidPlugin =
-        _plugin.resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
 
     await androidPlugin?.createNotificationChannel(waterChannel);
     await androidPlugin?.createNotificationChannel(gymChannel);
@@ -169,10 +171,34 @@ class NotificationService {
     await cancelMealReminders();
 
     final mealTimes = [
-      {'id': 301, 'hour': 8, 'min': 0, 'title': '🥤 Morning Shake Time', 'body': 'Start your day with protein — whey + milk + banana'},
-      {'id': 302, 'hour': 13, 'min': 0, 'title': '🍽️ Lunch Time!', 'body': 'Biggest meal of the day — load up on protein & carbs'},
-      {'id': 303, 'hour': 18, 'min': 0, 'title': '💪 Pre-Workout Shake', 'body': 'Fuel up before gym — whey shake now!'},
-      {'id': 304, 'hour': 21, 'min': 0, 'title': '🍽️ Post-Workout Dinner', 'body': 'Recovery meal — eat within 1 hr of workout'},
+      {
+        'id': 301,
+        'hour': 8,
+        'min': 0,
+        'title': '🥤 Morning Shake Time',
+        'body': 'Start your day with protein — whey + milk + banana',
+      },
+      {
+        'id': 302,
+        'hour': 13,
+        'min': 0,
+        'title': '🍽️ Lunch Time!',
+        'body': 'Biggest meal of the day — load up on protein & carbs',
+      },
+      {
+        'id': 303,
+        'hour': 18,
+        'min': 0,
+        'title': '💪 Pre-Workout Shake',
+        'body': 'Fuel up before gym — whey shake now!',
+      },
+      {
+        'id': 304,
+        'hour': 21,
+        'min': 0,
+        'title': '🍽️ Post-Workout Dinner',
+        'body': 'Recovery meal — eat within 1 hr of workout',
+      },
     ];
 
     final now = tz.TZDateTime.now(tz.local);
@@ -243,8 +269,10 @@ class NotificationService {
   }
 
   Future<void> requestPermissions() async {
-    final androidPlugin = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     await androidPlugin?.requestNotificationsPermission();
     await androidPlugin?.requestExactAlarmsPermission();
   }

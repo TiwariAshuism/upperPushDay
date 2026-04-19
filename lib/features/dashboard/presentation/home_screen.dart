@@ -138,7 +138,8 @@ class HomeScreen extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => WorkoutDetailScreen(workout: state.workout),
+                      builder: (_) =>
+                          WorkoutDetailScreen(workout: state.workout),
                     ),
                   ),
                 ),
@@ -214,11 +215,7 @@ class _SummaryStrip extends StatelessWidget {
           ),
           _Divider(),
           Expanded(
-            child: _StatItem(
-              label: 'Water',
-              value: '3L',
-              icon: '💧',
-            ),
+            child: _StatItem(label: 'Water', value: '3L', icon: '💧'),
           ),
         ],
       ),
@@ -228,7 +225,11 @@ class _SummaryStrip extends StatelessWidget {
 
 class _StatItem extends StatelessWidget {
   final String label, value, icon;
-  const _StatItem({required this.label, required this.value, required this.icon});
+  const _StatItem({
+    required this.label,
+    required this.value,
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -246,10 +247,7 @@ class _StatItem extends StatelessWidget {
         ),
         Text(
           label,
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.7),
-            fontSize: 11,
-          ),
+          style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 11),
         ),
       ],
     );

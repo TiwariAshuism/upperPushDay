@@ -78,7 +78,10 @@ class _MacroSummaryCard extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: const Color(0xFF6C63FF).withOpacity(0.2),
                   borderRadius: BorderRadius.circular(8),
@@ -181,17 +184,11 @@ class _MacroBar extends StatelessWidget {
         const SizedBox(height: 6),
         Text(
           label,
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.7),
-            fontSize: 12,
-          ),
+          style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 12),
         ),
         Text(
           'Target: $target$unit',
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.4),
-            fontSize: 10,
-          ),
+          style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 10),
         ),
       ],
     );
@@ -286,7 +283,10 @@ class _MealItemCard extends StatelessWidget {
                   const SizedBox(height: 10),
                   Row(
                     children: [
-                      _MacroChip('P: ${item.protein}g', const Color(0xFF4CAF50)),
+                      _MacroChip(
+                        'P: ${item.protein}g',
+                        const Color(0xFF4CAF50),
+                      ),
                       const SizedBox(width: 6),
                       _MacroChip('C: ${item.carbs}g', const Color(0xFFFFC107)),
                       const SizedBox(width: 6),
@@ -318,7 +318,11 @@ class _MacroChip extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: TextStyle(color: color, fontSize: 11, fontWeight: FontWeight.w600),
+        style: TextStyle(
+          color: color,
+          fontSize: 11,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }
@@ -363,17 +367,19 @@ class _TipsCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          ...tips.map((tip) => Padding(
-                padding: const EdgeInsets.only(bottom: 6),
-                child: Text(
-                  tip,
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.75),
-                    fontSize: 12,
-                    height: 1.4,
-                  ),
+          ...tips.map(
+            (tip) => Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Text(
+                tip,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.75),
+                  fontSize: 12,
+                  height: 1.4,
                 ),
-              )),
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -28,9 +28,21 @@ class MealCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _MacroItem('${meal.totalCalories}', 'kcal', const Color(0xFF6C63FF)),
-                _MacroItem('${meal.totalProtein}g', 'Protein', const Color(0xFF4CAF50)),
-                _MacroItem('${meal.totalCarbs}g', 'Carbs', const Color(0xFFFFC107)),
+                _MacroItem(
+                  '${meal.totalCalories}',
+                  'kcal',
+                  const Color(0xFF6C63FF),
+                ),
+                _MacroItem(
+                  '${meal.totalProtein}g',
+                  'Protein',
+                  const Color(0xFF4CAF50),
+                ),
+                _MacroItem(
+                  '${meal.totalCarbs}g',
+                  'Carbs',
+                  const Color(0xFFFFC107),
+                ),
                 _MacroItem('${meal.totalFat}g', 'Fat', const Color(0xFFFF5722)),
               ],
             ),
@@ -132,10 +144,7 @@ class _MacroItem extends StatelessWidget {
         ),
         Text(
           label,
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.5),
-            fontSize: 10,
-          ),
+          style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 10),
         ),
       ],
     );
